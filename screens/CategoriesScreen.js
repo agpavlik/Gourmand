@@ -6,7 +6,9 @@ import { CATEGORIES } from "../data/data";
 function CategoriesScreen({ navigation }) {
   function renderCategoryItem(itemData) {
     function pressHandler() {
-      navigation.navigate("MealsOverview");
+      navigation.navigate("MealsOverview", {
+        categoryId: itemData.item.id,
+      }); // second parameter is optiona. It is object allows to define parameters which would be passed to screen.
     }
     return (
       <CategoryGridTile

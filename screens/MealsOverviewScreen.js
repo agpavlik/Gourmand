@@ -2,10 +2,12 @@ import { View, Text, StyleSheet } from "react-native";
 
 import { MEALS } from "../data/data";
 
-function MealsOverviewScreen() {
+function MealsOverviewScreen({ route }) {
+  //  Get the ID off the category that is passed through navigation to this screen
+  const catId = route.params.categoryId;
   return (
     <View style={styles.container}>
-      <Text>Meals Overview Screen</Text>
+      <Text>Meals Overview Screen - {catId}</Text>
     </View>
   );
 }
