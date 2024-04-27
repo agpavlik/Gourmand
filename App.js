@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Button } from "react-native";
 
 import CategoriesScreen from "./screens/CategoriesScreen";
 import MealsOverviewScreen from "./screens/MealsOverviewScreen";
