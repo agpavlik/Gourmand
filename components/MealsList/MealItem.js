@@ -1,15 +1,14 @@
 import {
   View,
-  Text,
   Pressable,
+  Text,
   Image,
   StyleSheet,
   Platform,
 } from "react-native";
-
 import { useNavigation } from "@react-navigation/native";
 
-import MealDetails from "./MealDetails";
+import MealDetails from "../MealDetails";
 
 function MealItem({
   id,
@@ -57,7 +56,7 @@ const styles = StyleSheet.create({
     margin: 16,
     borderRadius: 8,
     overflow: Platform.OS === "android" ? "hidden" : "visible",
-    backgroundColor: "#ebe8e7",
+    backgroundColor: "white",
     elevation: 4,
     shadowColor: "black",
     shadowOpacity: 0.25,
@@ -80,15 +79,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     margin: 8,
-  },
-  details: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 8,
-  },
-  detailItem: {
-    marginHorizontal: 4,
-    fontSize: 12,
   },
 });
