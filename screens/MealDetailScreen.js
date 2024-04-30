@@ -6,28 +6,37 @@ import List from "../components/MealDetail/List";
 import Subtitle from "../components/MealDetail/Subtitle";
 import MealDetails from "../components/MealDetails";
 import { MEALS } from "../data/data";
-import { FavoritesContext } from "../store/context/favorites-context";
+
+// import { FavoritesContext } from "../store/context/favorites-context";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "../store/redux/favorites";
 
 function MealDetailScreen({ route, navigation }) {
   //useContext returns the context value for the context.
   // To determine the context value, React searches the component tree
   // and finds the closest context provider above for that particular context.
-  const favoriteMealsCtx = useContext(FavoritesContext);
+  // const favoriteMealsCtx = useContext(FavoritesContext);
+
+  const favoriteMealIds = useSelector((state) => state.favoriteMeals.ids);
+  const dispatch = useDispatch();
 
   const mealId = route.params.mealId;
-
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
 
   // Check if ids array with meals include a particular favorite meal.
   // Then return different icons for true / false results.
-  const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId);
+  // const mealIsFavorite = favoriteMealsCtx.ids.includes(mealId);
+
+  const mealIsFavorite = favoriteMealIds.includes(mealId);
 
   // ---- Change star icon by touching it
   function changeFavoriteStatusHandler() {
     if (mealIsFavorite) {
-      favoriteMealsCtx.removeFavorite(mealId);
+      // favoriteMealsCtx.removeFavorite(mealId);
+      dispatch(removeFavorite({ id: mealId }));
     } else {
-      favoriteMealsCtx.addFavorite(mealId);
+      // favoriteMealsCtx.addFavorite(mealId);
+      dispatch(addFavorite({ id: mealId }));
     }
   }
   // ----
