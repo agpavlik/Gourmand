@@ -7,8 +7,13 @@ import { FavoritesContext } from "../store/context/favorites-context";
 import { MEALS } from "../data/data";
 
 function FavoritesScreen() {
+  //useContext returns the context value for the context.
+  // To determine the context value, React searches the component tree
+  // and finds the closest context provider above for that particular context.
   const favoriteMealsCtx = useContext(FavoritesContext);
 
+  // Filter will return an array with all the meals
+  // that have an entry in IDs array in context.
   const favoriteMeals = MEALS.filter((meal) =>
     favoriteMealsCtx.ids.includes(meal.id)
   );
@@ -16,7 +21,7 @@ function FavoritesScreen() {
   if (favoriteMeals.length === 0) {
     return (
       <View style={styles.rootContainer}>
-        <Text>The favorites screen!</Text>
+        <Text>No favorite meales added yet</Text>
       </View>
     );
   }
