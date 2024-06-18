@@ -27,4 +27,4 @@ Main screen | Meals category screen | Meal's details screen
 Feel free to install and play with this project.
 
 Link to install app for Android devices -
-<a href='https://expo.dev/accounts/olekpavlyk/projects/gourmand/builds/b21ef86d-7ba9-4d8f-9a2f-d402a00e3e05'>Download 'Gourmand App'</a>
+<a href='https://expo.dev/accounts/olekpavlyk/projects/gourmand/builds/84ec0553-0a9b-4523-95a7-53b092c66770'>Download 'Gourmand App'</a>
